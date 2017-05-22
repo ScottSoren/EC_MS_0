@@ -279,7 +279,7 @@ def sync_metadata(EC_data, RE_vs_RHE=None, A_el=None, verbose=True):
     if RE_vs_RHE is None:
         V_str = E_str
     elif E_str is not None:
-        V_str = 'E vs RHE / [V]'
+        V_str = 'U vs RHE / [V]' #changed from E to U 17E21
         EC_data[V_str] = EC_data[E_str] + RE_vs_RHE
     
     if A_el is not None:

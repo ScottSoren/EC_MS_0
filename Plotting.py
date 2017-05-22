@@ -348,7 +348,11 @@ def plot_flux(MS_data, mols={'H2':'b', 'CH4':'r', 'C2H4':'g', 'O2':'k'},
                 y = y - 0.99 * min(y) #0.99 to avoid issues when log plotting.
             except ValueError:
                 print(y)
-        ax.plot(x, y, color, label=mol)
+        if type(mol) is str:
+            l = mol
+        else:
+            l = mol.name
+        ax.plot(x, y, color, label=l)
     if leg:
         if type(leg) is not str:
             leg = 'lower right'
